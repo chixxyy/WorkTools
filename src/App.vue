@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import QrGenerator from './components/QrGenerator.vue'
 import ImageResizer from './components/ImageResizer.vue'
 import CodeFormatter from './components/CodeFormatter.vue'
+import JwtDecoder from './components/JwtDecoder.vue'
 
 const currentView = ref('home')
 </script>
@@ -45,6 +46,16 @@ const currentView = ref('home')
           </div>
           <h2 class="tool-title">程式碼排版</h2>
         </div>
+
+        <div class="tool-item" @click="currentView = 'jwtdecoder'">
+          <div class="tool-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h2 class="tool-title">JWT 解碼器</h2>
+        </div>
       </div>
     </div>
   </div>
@@ -52,4 +63,5 @@ const currentView = ref('home')
   <QrGenerator v-else-if="currentView === 'qrcode'" @back="currentView = 'home'" />
   <ImageResizer v-else-if="currentView === 'imageresizer'" @back="currentView = 'home'" />
   <CodeFormatter v-else-if="currentView === 'codeformatter'" @back="currentView = 'home'" />
+  <JwtDecoder v-else-if="currentView === 'jwtdecoder'" @back="currentView = 'home'" />
 </template>
