@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "js-beautify": "^2.0.3",
     "qrcode": "^1.5.4",
     "vue": "^3.5.42"
   },

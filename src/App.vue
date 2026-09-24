@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import QrGenerator from './components/QrGenerator.vue'
 import ImageResizer from './components/ImageResizer.vue'
+import CodeFormatter from './components/CodeFormatter.vue'
 
 const currentView = ref('home')
 </script>
@@ -9,7 +10,7 @@ const currentView = ref('home')
 <template>
   <div v-if="currentView === 'home'" class="home-container">
     <div class="glass-card home-card">
-      <h1 class="title">工作</h1>
+      <h1 class="title">工具</h1>
       
       <div class="tools-grid">
         <div class="tool-item" @click="currentView = 'qrcode'">
@@ -34,10 +35,21 @@ const currentView = ref('home')
           </div>
           <h2 class="tool-title">圖片縮放轉檔</h2>
         </div>
+
+        <div class="tool-item" @click="currentView = 'codeformatter'">
+          <div class="tool-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h2 class="tool-title">程式碼排版</h2>
+        </div>
       </div>
     </div>
   </div>
 
   <QrGenerator v-else-if="currentView === 'qrcode'" @back="currentView = 'home'" />
   <ImageResizer v-else-if="currentView === 'imageresizer'" @back="currentView = 'home'" />
+  <CodeFormatter v-else-if="currentView === 'codeformatter'" @back="currentView = 'home'" />
 </template>
