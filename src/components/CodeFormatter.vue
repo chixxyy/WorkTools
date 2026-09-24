@@ -222,18 +222,27 @@ const clearAll = () => {
 .editor-pane {
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
   overflow: hidden;
+}
+
+html.dark .editor-pane {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .pane-header {
   padding: 10px 15px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.05);
   font-size: 14px;
   font-weight: bold;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-main);
+}
+
+html.dark .pane-header {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .output-header {
@@ -247,7 +256,7 @@ const clearAll = () => {
   background: transparent;
   border: none;
   padding: 15px;
-  color: #e2e8f0;
+  color: var(--text-main);
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-size: 14px;
   line-height: 1.5;
@@ -259,6 +268,10 @@ const clearAll = () => {
 }
 
 .output-area {
+  color: #16a34a; /* darker green for light mode */
+}
+
+html.dark .output-area {
   color: #a3e635;
 }
 

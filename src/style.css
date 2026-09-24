@@ -5,23 +5,21 @@
   --primary-hover: #4f46e5;
   --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(0, 0, 0, 0.15);
   --text-main: #1f2937;
   --text-muted: #6b7280;
   --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #818cf8;
-    --primary-hover: #6366f1;
-    --bg-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-    --glass-bg: rgba(17, 24, 39, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --text-main: #f9fafb;
-    --text-muted: #9ca3af;
-    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  }
+html.dark {
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --bg-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  --glass-bg: rgba(17, 24, 39, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -103,10 +101,8 @@ body {
   border-radius: 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .tool-item {
-    background: rgba(0, 0, 0, 0.2);
-  }
+html.dark .tool-item {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .tool-item:hover {
@@ -116,10 +112,8 @@ body {
   border-color: var(--primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  .tool-item:hover {
-    background: rgba(0, 0, 0, 0.4);
-  }
+html.dark .tool-item:hover {
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .tool-icon {
@@ -160,10 +154,8 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  .btn-back:hover {
-    background: rgba(0, 0, 0, 0.2);
-  }
+html.dark .btn-back:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* Original QrGenerator styles */
@@ -198,10 +190,8 @@ body {
   cursor: not-allowed;
 }
 
-@media (prefers-color-scheme: dark) {
-  .input-control {
-    background: rgba(0, 0, 0, 0.2);
-  }
+html.dark .input-control {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .input-control:focus {
@@ -258,10 +248,8 @@ body {
   border: 1px dashed var(--glass-border);
 }
 
-@media (prefers-color-scheme: dark) {
-  .qr-preview {
-    background: rgba(0, 0, 0, 0.3);
-  }
+html.dark .qr-preview {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .qr-image {
@@ -360,10 +348,8 @@ body {
   border-color: var(--primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  .btn-secondary:hover:not(:disabled) {
-    background: rgba(0, 0, 0, 0.2);
-  }
+html.dark .btn-secondary:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .file-upload-wrapper {
@@ -377,10 +363,8 @@ body {
   transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  .file-upload-wrapper {
-    background: rgba(0, 0, 0, 0.1);
-  }
+html.dark .file-upload-wrapper {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .file-upload-wrapper:hover {
@@ -388,10 +372,8 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
-@media (prefers-color-scheme: dark) {
-  .file-upload-wrapper:hover {
-    background: rgba(0, 0, 0, 0.2);
-  }
+html.dark .file-upload-wrapper:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .file-input-hidden {

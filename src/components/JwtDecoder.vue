@@ -138,19 +138,27 @@ const formatTimestamp = (ts) => {
 .editor-pane {
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
   overflow: hidden;
+}
+
+html.dark .editor-pane {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .pane-header {
   padding: 10px 15px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.05);
   font-size: 14px;
   font-weight: bold;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  color: #f8fafc;
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-main);
+}
+
+html.dark .pane-header {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .input-header {
@@ -171,7 +179,7 @@ const formatTimestamp = (ts) => {
   background: transparent;
   border: none;
   padding: 15px;
-  color: #e2e8f0;
+  color: var(--text-main);
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-size: 14px;
   line-height: 1.5;
@@ -193,7 +201,7 @@ const formatTimestamp = (ts) => {
 .empty-state {
   padding: 2rem;
   text-align: center;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 .error-msg {
@@ -208,38 +216,51 @@ const formatTimestamp = (ts) => {
 
 .section-title {
   font-size: 13px;
-  color: #94a3b8;
+  color: var(--text-muted);
   margin-bottom: 8px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .json-block {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.05);
   padding: 15px;
   border-radius: 6px;
-  color: #f87171; /* header redish */
+  color: #d97706; /* header orange/red for light mode */
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-size: 14px;
   margin-bottom: 1.5rem;
   overflow-x: auto;
 }
 
+html.dark .json-block {
+  background: rgba(0, 0, 0, 0.3);
+  color: #f87171;
+}
+
 .payload-block {
-  color: #a3e635; /* payload greenish */
+  color: #16a34a; /* payload green for light mode */
+}
+
+html.dark .payload-block {
+  color: #a3e635;
 }
 
 .time-info {
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(59, 130, 246, 0.05);
   border: 1px solid rgba(59, 130, 246, 0.3);
   padding: 15px;
   border-radius: 6px;
 }
 
+html.dark .time-info {
+  background: rgba(59, 130, 246, 0.1);
+}
+
 .time-item {
   margin-bottom: 8px;
   font-size: 14px;
-  color: #e2e8f0;
+  color: var(--text-main);
   display: flex;
   align-items: center;
   gap: 10px;
